@@ -1,12 +1,13 @@
 <h1 align="center">vue-grid-layout</h1>
 
 <p align="center">
-<a target="_blank" href="https://www.npmjs.com/package/grid-layout-area"><img src="https://img.shields.io/npm/v/grid-layout-area.svg"/></a> 
+<a  href="https://www.npmjs.com/package/grid-layout-area" target="_blank"><img src="https://img.shields.io/npm/v/grid-layout-area.svg"/ ></a> 
 <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.2.x-brightgreen.svg"/></a>
 </p>
 <p align="center">
-<a target="_blank" href="https://cjsound.github.io/grid-layout-area/dist/">演示地址</a> 
+<a  href="https://cjsound.github.io/grid-layout-area/dist/" target="_blank">演示地址</a> 
 </p>
+
 vue-grid-layout 基础上完善下画布大小限制 [原地址](https://github.com/jbaysolutions/vue-grid-layout), for Vue.js. **Heavily inspired in [React-Grid-Layout](https://github.com/STRML/react-grid-layout)**
 
 ### **Current version:** 2.3.3 (Supports Vue 2.2+)
