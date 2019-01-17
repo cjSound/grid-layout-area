@@ -1,7 +1,7 @@
 <h1 align="center">vue-grid-layout</h1>
 
 
-
+[演示地址](https://cjsound.github.io/grid-layout-area/dist/)
 vue-grid-layout 基础上完善下画布大小限制 [原地址](https://github.com/jbaysolutions/vue-grid-layout), for Vue.js. **Heavily inspired in [React-Grid-Layout](https://github.com/STRML/react-grid-layout)**
 
 ### **Current version:** 2.3.3 (Supports Vue 2.2+)
