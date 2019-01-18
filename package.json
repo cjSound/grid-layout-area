@@ -1,6 +1,6 @@
 {
   "name": "grid-layout-area",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "description": "A draggable and resizable grid layout, as a Vue component.Canvas panel size control",
   "keywords": [
     "grid",
