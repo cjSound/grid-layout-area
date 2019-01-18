@@ -4353,12 +4353,12 @@ var web_dom_iterable = __webpack_require__("ac6a");
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d988afac-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridItem.vue?vue&type=template&id=1f2a953e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d988afac-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridItem.vue?vue&type=template&id=5bf0c0c8&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"item",staticClass:"vue-grid-item",class:{ 'vue-resizable' : _vm.resizable, 'resizing' : _vm.isResizing, 'vue-draggable-dragging' : _vm.isDragging, 'cssTransforms' : _vm.useCssTransforms, 'render-rtl' : _vm.renderRtl, 'disable-userselect': _vm.isDragging, 'no-touch': _vm.isAndroid },style:(_vm.style)},[_vm._t("default"),(_vm.resizable)?_c('span',{ref:"handle",class:_vm.resizableHandleClass}):_vm._e()],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/GridItem.vue?vue&type=template&id=1f2a953e&
+// CONCATENATED MODULE: ./src/components/GridItem.vue?vue&type=template&id=5bf0c0c8&
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/arrayWithoutHoles.js
 function _arrayWithoutHoles(arr) {
@@ -4387,12 +4387,6 @@ function _toConsumableArray(arr) {
 }
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.number.constructor.js
 var es6_number_constructor = __webpack_require__("c5f6");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.promise.js
-var es6_promise = __webpack_require__("551c");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.promise.finally.js
-var es7_promise_finally = __webpack_require__("097d");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.replace.js
 var es6_regexp_replace = __webpack_require__("a481");
@@ -5212,9 +5206,6 @@ function removeWindowEventListener(event
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridItem.vue?vue&type=script&lang=js&
 
 
-
-
-
 //
 //
 //
@@ -5612,6 +5603,7 @@ var interact = __webpack_require__("fb3a");
         height: 0
       };
       var pos;
+      var next = false;
 
       switch (event.type) {
         case "resizestart":
@@ -5654,6 +5646,7 @@ var interact = __webpack_require__("fb3a");
             // console.log("### resize end => x=" +this.innerX + " y=" + this.innerY + " w=" + this.innerW + " h=" + this.innerH);
             this.eventBus.$emit('judgeFixArea', function (hasMove) {
               if (hasMove) {
+                next = true;
                 pos = _this3.calcPosition(_this3.innerX, _this3.innerY, _this3.innerW, _this3.innerH);
               } else {
                 pos = _this3.calcPosition.apply(_this3, _toConsumableArray(_this3.oldPostion));
@@ -5703,7 +5696,7 @@ var interact = __webpack_require__("fb3a");
         this.$emit("resize", this.i, pos.h, pos.w, newSize.height, newSize.width);
       }
 
-      if (event.type === "resizeend" && (this.previousW !== this.innerW || this.previousH !== this.innerH)) {
+      if (next && event.type === "resizeend" && (this.previousW !== this.innerW || this.previousH !== this.innerH)) {
         this.$emit("resized", this.i, pos.h, pos.w, newSize.height, newSize.width);
       }
 
@@ -5724,6 +5717,7 @@ var interact = __webpack_require__("fb3a");
         top: 0,
         left: 0
       };
+      var next = false;
 
       switch (event.type) {
         case "dragstart":
@@ -5756,6 +5750,8 @@ var interact = __webpack_require__("fb3a");
 
             this.eventBus.$emit('judgeFixArea', function (hasMove) {
               if (hasMove) {
+                next = true;
+
                 if (_this4.renderRtl) {
                   newPosition.left = (_clientRect.right - _parentRect.right) * -1;
                 } else {
@@ -5820,7 +5816,7 @@ var interact = __webpack_require__("fb3a");
         this.$emit("move", this.i, pos.x, pos.y);
       }
 
-      if (event.type === "dragend" && (this.previousX !== this.innerX || this.previousY !== this.innerY)) {
+      if (next && event.type === "dragend" && (this.previousX !== this.innerX || this.previousY !== this.innerY)) {
         this.$emit("moved", this.i, pos.x, pos.y);
       }
 
@@ -6139,6 +6135,12 @@ var GridLayoutvue_type_template_id_7b1a1ed1_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/GridLayout.vue?vue&type=template&id=7b1a1ed1&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.promise.js
+var es6_promise = __webpack_require__("551c");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.promise.finally.js
+var es7_promise_finally = __webpack_require__("097d");
 
 // CONCATENATED MODULE: ./src/helpers/responsiveUtils.js
 

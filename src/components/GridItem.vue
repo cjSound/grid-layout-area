@@ -379,6 +379,7 @@
 
                 const newSize = {width: 0, height: 0};
                 let pos;
+                let next =false;
                 switch (event.type) {
                     case "resizestart": {
                         this.previousW = this.innerW;
@@ -412,6 +413,7 @@
                         // console.log("### resize end => x=" +this.innerX + " y=" + this.innerY + " w=" + this.innerW + " h=" + this.innerH);
                         this.eventBus.$emit('judgeFixArea',(hasMove)=>{
                             if(hasMove){
+                                next =true;
                                 pos = this.calcPosition(this.innerX, this.innerY, this.innerW, this.innerH);
                             }else{
                                 pos= this.calcPosition(...this.oldPostion)
@@ -456,7 +458,7 @@
                 if (this.innerW !== pos.w || this.innerH !== pos.h) {
                     this.$emit("resize", this.i, pos.h, pos.w, newSize.height, newSize.width);
                 }
-                if (event.type === "resizeend" && (this.previousW !== this.innerW || this.previousH !== this.innerH)) {
+                if (next && event.type === "resizeend" && (this.previousW !== this.innerW || this.previousH !== this.innerH)) {
                     this.$emit("resized", this.i, pos.h, pos.w, newSize.height, newSize.width);
                 }
                 this.eventBus.$emit("resizeEvent", event.type, this.i, this.innerX, this.innerY, pos.h, pos.w);
@@ -472,6 +474,7 @@
 
                 // let shouldUpdate = false;
                 let newPosition = {top: 0, left: 0};
+                let next =false;
                 switch (event.type) {
                     case "dragstart": {
                         this.previousX = this.innerX;
@@ -496,6 +499,7 @@
 
                         this.eventBus.$emit('judgeFixArea',(hasMove)=>{
                             if(hasMove){
+                                next =true;
                                 if (this.renderRtl) {
                                     newPosition.left = (clientRect.right - parentRect.right) * -1;
                                 } else {
@@ -554,7 +558,7 @@
                 if (this.innerX !== pos.x || this.innerY !== pos.y) {
                     this.$emit("move", this.i, pos.x, pos.y);
                 }
-                if (event.type === "dragend" && (this.previousX !== this.innerX || this.previousY !== this.innerY)) {
+                if (next &&event.type === "dragend" && (this.previousX !== this.innerX || this.previousY !== this.innerY)) {
                     this.$emit("moved", this.i, pos.x, pos.y);
                 }
                 this.eventBus.$emit("dragEvent", event.type, this.i, pos.x, pos.y, this.innerH, this.innerW);

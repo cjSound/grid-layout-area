@@ -136,10 +136,10 @@
                 this.index++;
                 this.layout.push(item);
             },
-            move: function(i, newX, newY){
+            move: function(){
                 // console.log("MOVE i=" + i + ", X=" + newX + ", Y=" + newY);
             },
-            resize: function(i, newH, newW, newHPx, newWPx){
+            resize: function(){
                 // console.log("RESIZE i=" + i + ", H=" + newH + ", W=" + newW + ", H(px)=" + newHPx + ", W(px)=" + newWPx);
             },
             moved: function(i, newX, newY){
