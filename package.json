@@ -17,6 +17,8 @@
     "url": "https://github.com/cjSound/grid-layout-area.git"
   },
   "author": "<gustavo.santos@jbaysolutions.com> ",
+  "main": "dist/grid-layout-area.common.js",
+  "unpkg": "dist/grid-layout-area.umd.min.js",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "rimraf dist && vue-cli-service build",
