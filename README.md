@@ -1,7 +1,7 @@
 <h1 align="center">vue-grid-layout</h1>
 
 <p align="center">
-<a  href="https://www.npmjs.com/package/grid-layout-area" target="_blank"><img src="https://img.shields.io/npm/v/grid-layout-area.svg"/ ></a> 
+<a  href="https://www.npmjs.com/package/vue-lazy-table-tree" target="_blank"><img src="https://img.shields.io/npm/v/vue-lazy-table-tree.svg"/ ></a> 
 <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.2.x-brightgreen.svg"/></a>
 </p>
 <p align="center">
